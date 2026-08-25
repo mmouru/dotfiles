@@ -1,0 +1,14 @@
+# Kitty startup session
+# https://sw.kovidgoyal.net/kitty/sessions/
+
+new_tab home
+cd ~
+launch
+
+new_tab nvim
+cd ~
+launch nvim .
+
+new_tab btop
+cd ~
+launch btop

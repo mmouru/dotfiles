@@ -1,0 +1,10 @@
+# Kitty session for toucan2-zmk
+# Usage: kitty --session=~/.config/kitty/toucan2.session
+
+new_tab neovim
+cd /home/mouru/zmk/toucan2-zmk
+launch nvim .
+
+new_tab lazygit
+cd /home/mouru/zmk/toucan2-zmk
+launch lazygit
