@@ -3,3 +3,10 @@
 *.pem
 *.env
 secrets
+
+# Pi agent generated files
+.pi/agent/auth.json
+.pi/agent/models-store.json
+.pi/agent/trust.json
+.pi/agent/sessions/
+.pi/agent/bin/

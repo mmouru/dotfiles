@@ -1,0 +1,9 @@
+# Auto-generated / ephemeral — do not commit
+auth.json
+models-store.json
+trust.json
+sessions/
+bin/
+
+# OS files
+.DS_Store

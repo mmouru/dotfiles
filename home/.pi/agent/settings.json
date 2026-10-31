@@ -1,0 +1,12 @@
+{
+  "lastChangelogVersion": "1.3.0",
+  "theme": "dark",
+  "hideThinkingBlock": true,
+  "compaction": {
+    "enabled": true
+  },
+  "packages": [
+    "npm:billion-context",
+    "npm:@juicesharp/rpiv-ask-user-question"
+  ]
+}

@@ -154,8 +154,9 @@ rb() {
 git rebase -i HEAD~"$1"
 }
 
+unalias gb 2>/dev/null
 gb() {
-git branch --show-current 2>/dev/null | sed 's/^/ (/;s/$/)/'
+  git branch --show-current 2>/dev/null | sed 's/^/ (/;s/$/)/'
 }
 
 # History settings
@@ -180,6 +181,9 @@ export GOBIN="$HOME/.local/bin"
 # Editor & terminal
 export EDITOR='nvim'
 export TERM='xterm-kitty'
+
+# Pi coding agent — config lives in dotfiles
+export PI_CODING_AGENT_DIR="$HOME/projects/dotfiles/.pi/agent"
 
 # API tokens loaded from local secrets file
 # Create ~/.local/share/dotfiles/secrets with:
