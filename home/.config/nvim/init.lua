@@ -451,6 +451,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
+      vim.keymap.set('n', '<leader>gs', '<cmd>DiffviewOpen<cr>', { desc = '[G]it [S]tatus / diff' })
       vim.keymap.set('n', '<leader>sS', function()
         require('telescope').extensions['session-lens'].search_session()
       end, { desc = '[S]earch [S]ession' })
