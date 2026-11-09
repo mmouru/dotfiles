@@ -25,7 +25,7 @@ include current-theme.conf
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-# font_size 11.0
+font_size 17.0
 
 #: Font size (in pts).
 
@@ -344,7 +344,7 @@ include current-theme.conf
 #: setting also controls blinking text, which blinks in exact rhythm
 #: with the cursor.
 
-# cursor_trail 0
+cursor_trail 10
 
 #: Set this to a value larger than zero to enable a "cursor trail"
 #: animation. This is an animation that shows a "trail" following the
@@ -1266,7 +1266,7 @@ include current-theme.conf
 #: Window focus and this feature to indicate which kitty window is
 #: active insidethe OS Window.
 
-# hide_window_decorations no
+hide_window_decorations titlebar-and-corners
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only and titlebar-and-corners can be used
@@ -1451,7 +1451,7 @@ include current-theme.conf
 #: The second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-# tab_bar_style fade
+tab_bar_style slant
 
 #: The tab bar style, can be one of:
 
@@ -1477,7 +1477,7 @@ include current-theme.conf
 #:     a mapping for the select_tab action which presents you with a list of
 #:     tabs and allows for easy switching to a tab.
 
-# tab_bar_filter
+tab_bar_filter session:~ or session:^$
 
 #: A search expression <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#search-syntax>. Only tabs that match this expression will
@@ -1897,7 +1897,7 @@ include current-theme.conf
 
 #: Advanced {{{
 
-# shell .
+shell /usr/bin/zsh
 
 #: The shell program to execute. The default value of . means to use
 #: the value of of the SHELL environment variable or if unset,
@@ -1965,7 +1965,7 @@ include current-theme.conf
 #: See rc_custom_auth <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#rc-custom-auth> for details.
 
-# allow_remote_control no
+allow_remote_control yes
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
@@ -2109,7 +2109,7 @@ include current-theme.conf
 #: the kitty.conf already exists when kitty is started. Changes to
 #: this setting by reloading configuration are ignored.
 
-# startup_session none
+startup_session ~/.config/kitty/startup.session
 
 #: Path to a session file to use for all kitty instances. Can be
 #: overridden by using the kitty --session =none command line option
@@ -2159,7 +2159,7 @@ include current-theme.conf
 #: special value of ask means that kitty will ask before opening the
 #: link when clicked.
 
-# shell_integration enabled
+shell_integration no-sudo
 
 #: Enable shell integration on supported shells. This enables features
 #: such as jumping to previous prompts, browsing the output of the
@@ -2202,7 +2202,7 @@ include current-theme.conf
 #: This option must be a comma separated list of the above values.
 #: Only the first valid match, in the order specified, is sourced.
 
-# notify_on_cmd_finish never
+notify_on_cmd_finish invisible 20
 
 #: Show a desktop notification when a long-running command finishes
 #: (needs shell_integration). The possible values are:
@@ -3267,3 +3267,17 @@ include current-theme.conf
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Inconsolata Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
+
+
+# NOTE: f0 is not a standard key; change to ctrl+f1/f2/f12 if kitty rejects it
+map f1 goto_session ~/.config/kitty/startup.session
+map f2 goto_session ~/.config/kitty/zmk.session
+
